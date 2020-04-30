@@ -10,26 +10,19 @@
 #include <vector>
 #include <iostream>
 
-using namespace std ;
+// Updated to remove 'using' directives
 
-bool solution (vector<int> a, int k) {
+// Updated to more efficiently add the complements to check. Will only work until the answer is found.
+bool solution (std::vector<int> a, int k) {
     int i, j ;
-    vector<int> b ;
+    std::vector<int> b ;
 
-    for (i=0; i<a.size(); i++) {
-        b.push_back (k - a[i]) ;
-    }
-    for (i=0; i<b.size() ; i++) {
-        cout << a[i] << " " << b[i] << endl ;
-    }
-
-    for (i = 0 ; i<a.size(); i++) {
-        for (j = 0 ; j<a.size() ; j++) {
-            if (i != j) {
-                if (a[i] == b[j]) {
-                    return true ;
-                }
-            }
+    for (std::size_t i = 0 ; i < a.size() ; i++) {
+        if (b.size() == 0) b.push_back (k - a.at(i)) ;
+        std::size_t arr_size = b.size() ;
+        for (std::size_t j = 0; j < arr_size ; j++) {
+            if (a.at(i) == b.at(j)) return true ;
+            else b.push_back (k - a.at(i)) ;
         }
     }
 
@@ -38,14 +31,14 @@ bool solution (vector<int> a, int k) {
 
 int main (int argc, char **argv) {
 
-    vector<int> a{10, 5, 3, 7} ;
+    std::vector<int> a{10, 5, 3, 7} ;
     int k = 17 ;
     int i ;
 
     if (solution (a, k)) {
-        cout << "Yes, the array does have two elements adding to " << k << endl ;
+        std::cout << "Yes, the array does have two elements adding to " << k << std::endl ;
     } else {
-        cout << "No, the array does not have two elements adding to " << k << endl ;
+        std::cout << "No, the array does not have two elements adding to " << k << std::endl ;
     }
 
     return 0 ;
