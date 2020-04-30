@@ -11,27 +11,23 @@
 #include <vector>
 #include <iostream>
 
-using namespace std ;
-
 int main (int argc, char** argv) {
     int product = 1 ;
-    int i, j ;
-    vector<int> a{1, 2, 3, 4, 5} ;
-
-    for (i=0; i<a.size(); i++) product *= a[i] ;
+    std::vector<int> a{1, 2, 3, 4, 5} ;
 
 //  Allowed to use division
-//  for (i=0; i<a.size() ; i++) cout << product / a[i] << " " ;
+//  for (std::size_t i = 0 ; i<a.size() ; i++) product *= a.at(i) ;
+//  for (std::size_t i = 0 ; i<a.size() ; i++) cout << product / a.at(i) << " " ;
 
-    // Version not allowing divison - Can calculate by not including the element
-    for (i=0; i<a.size(); i++) {
+    // Solution not allowing divison - calculate by not including the element
+    for (std::size_t i=0; i<a.size(); i++) {
         product = 1 ;
-        for (j=0 ; j<a.size() ; j++) {
-            if (i != j) product *= a[j] ;
+        for (std::size_t j=0 ; j<a.size() ; j++) {
+            if (static_cast<int>(i) != static_cast<int>(j)) product *= a.at(j) ;
         }
-        cout << product << " " ;
+        std::cout << product << " " ;
     }
-    cout << endl ;
+    std::cout << std::endl ;
 
     return 0 ;
 }
