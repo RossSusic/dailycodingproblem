@@ -41,6 +41,8 @@ The following test should pass:
 node = Node('root', Node('left', Node('left.left')), Node('right'))
 assert deserialize(serialize(node)).left.left.val == 'left.left'
 
+---
+
 **[Coding Problem #4 - [easy]](https://github.com/RossSusic/dailycodingproblem/blob/master/004/first.cpp "Asked by Stripe - [easy]")**
 
 This problem was asked by Stripe.
@@ -50,3 +52,5 @@ Given an array of integers, find the first missing positive integer in linear ti
 For example, the input ```[3, 4, -1, 1]``` should give ```2```. The input ```[1, 2, 0]``` should give ```3```.
 
 You can modify the input array in-place.
+
+---
