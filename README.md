@@ -24,7 +24,7 @@ Follow-up: what if you can't use division?
 
 ---
 
-**[Coding Problem #3 - [hard]])**
+**[Coding Problem #3 - [hard]]**
 
 This problem was asked by Google.
 
