@@ -22,6 +22,8 @@ For example, if our input was ```[1, 2, 3, 4, 5]```, the expected output would b
 
 Follow-up: what if you can't use division?
 
+---
+
 **[Coding Problem #3 - [hard]])**
 
 This problem was asked by Google.
